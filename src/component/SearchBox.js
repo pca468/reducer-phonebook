@@ -9,19 +9,19 @@ const SearchBox = () => {
   let { contact } = useSelector((state) => state);
     const searchByName = (event) => {
       event.preventDefault();
-      dispatch({type: "SEARCH_BY_USERNAME", patload: { keyword }});
+      dispatch({type: "SEARCH_BY_USERNAME", payload: { keyword }});
     }
 
   return ( // lg를 통해 각각 비율 설정으로 너비 설정 가눙
   <Form onSubmit={searchByName} className='search-form'>
     <Row>
-        <Col lg ={10}>
+        <Col lg ={9}>
             <Form.Control 
               type="text" 
               placeholder="이름을 입력해주세요. "
               onChange={(event) => setKeyword(event.target.value)} />
         </Col>
-        <Col lg={2}>
+        <Col lg={3}>
             <Button type='submit'>찾기</Button>
         </Col>
     </Row>

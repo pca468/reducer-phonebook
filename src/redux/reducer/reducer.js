@@ -17,7 +17,7 @@ function reducer(state =initialState, action) { // 2개의 매개변수 필요 (
             ]};
 
         case "SEARCH_BY_USERNAME" : 
-            return {...state, keyword: payload.keyword};
+            return {...state, keyword: payload?.keyword};
 
         default:
             return{...state}
